@@ -23,3 +23,5 @@ cd "$ORIGINALDIRECTORY" || exit
 
 # Runs the wrap_contents
 ./bin/wrap_contents.sh "$TEMPFILE" html_components/username_dist "$DIRECTORY"/username_dist.html
+
+rm "$TEMPFILE"
