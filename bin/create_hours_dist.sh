@@ -1,3 +1,4 @@
+
 # Takes a directory as an arguement and stores it for later use.
 DIRECTORY=$1
 
@@ -23,4 +24,7 @@ cd "$ORIGINALDIRECTORY" || exit
 ./bin/wrap_contents.sh "$TEMPFILE" html_components/hours_dist "$DIRECTORY"/hours_dist.html
 
 rm "$TEMPFILE"
+
+#Code does not pass without "exit 0" here. It is unexplained why it will not pass without it.
+exit 0
 ~                                                                                                      
