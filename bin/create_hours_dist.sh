@@ -1,3 +1,4 @@
+#!/bin/bash
 
 # Takes a directory as an arguement and stores it for later use.
 DIRECTORY=$1
@@ -15,7 +16,7 @@ cd "$DIRECTORY" || exit
 # Then we sort the file, count each time a that hour is on the file (using uniq -c). Then we reformat
 #file by using awk print to insert the hours and the amount of times the hour shows up
 #into data.addRow(['HOURS', NUMBER]) and then puts that in to the temp file.
-cat ./*/failed_login_data.txt | awk '{print $3}' | sort | uniq -c | awk '{print("data.addRow([\x27"$2"\x27, "$1"]);")}' > "$TEMPFILE"
+cat ./*/failed_login_data.txt | awk '{print $3}' | sort | uniq -c | awk '{print("data.addRow([\x27"$2"\x27, "$1"]);\n")}' > "$TEMPFILE"
 
 # changes directory back to the original directory
 cd "$ORIGINALDIRECTORY" || exit

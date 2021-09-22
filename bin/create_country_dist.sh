@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Takes a directory as an arguement and stores it for later use.
 DIRECTORY=$1
 
